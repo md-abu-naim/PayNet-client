@@ -11,6 +11,7 @@ import History from "../Dashboard/User/History";
 import CashInManagement from "../Dashboard/Agent/CashInManagement";
 import CashOutManagement from "../Dashboard/Agent/CashOutManagement";
 import AllHIstory from "../Dashboard/Admin/AllHIstory";
+import Register from "../Components/Register";
 
 export const router = createBrowserRouter([
     {
@@ -23,16 +24,14 @@ export const router = createBrowserRouter([
             }
         ]
     },
-    // {
-    //     path: '/dashboard',
-    //     element: <Dashboard /> ,
-    //     children: [
-    //         {
-    //             path:'all-users',
-    //             element: <div>hlw</div>
-    //         },
-    //     ]
-    // }
+    {
+       path: 'signUp',
+       element: <Register></Register>
+    },
+    {
+       path: 'signUp',
+       element: <Register></Register>
+    },
 
     {
         path: '/dashboard',
