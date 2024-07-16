@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import { GrLogout } from 'react-icons/gr'
-import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import AllUsers from './AllUsers'
 import { FaBookBookmark } from 'react-icons/fa6'
 
 const Sideber = () => {
@@ -20,13 +18,14 @@ const Sideber = () => {
         <div>
             <>
                 {/* Small Screen Navbar */}
-                <div className='bg-gray-300 text-black flex justify-between md:hidden'>
+                <div className='bg-gray-300 text-black flex justify-between items-center md:hidden'>
                     <div>
                         <div className='block cursor-pointer p-4 font-bold'>
-                            <Link to='/' className='text-2xl text-black'>ScholarHub</Link>
+                            <Link to='/' className='text-2xl text-black'>PayNet</Link>
+                            
                         </div>
                     </div>
-
+                    <p className='text-black font-bold '>Balance: 5000 tk</p>
                     <button
                         onClick={handleToggle}
                         className='mobile-menu-button p-4 focus:outline-none focus:bg-[#bba684]'
@@ -42,8 +41,9 @@ const Sideber = () => {
                 >
                     <div>
                         <div>
-                            <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center mx-auto'>
+                            <div className='w-full hidden md:flex flex-col px-4 py-2 shadow-lg rounded-lg justify-center items-center mx-auto'>
                                 <Link to='/' className='text-2xl font-bold text-black'>PayNet</Link>
+                                <p className='text-black font-bold'>Balance: 5000 tk</p>
                             </div>
                         </div>
 
@@ -72,18 +72,7 @@ const Sideber = () => {
                     <div>
                         <hr />
 
-                        {/* Profile Menu */}
-                        <NavLink
-                            to='/dashboard/profile'
-                            className={({ isActive }) =>
-                                `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-[#0d0801]   hover:text-white ${isActive ? 'bg-[#f7ce8c]  text-black' : 'text-black'
-                                }`
-                            }
-                        >
-                            <FcSettings className='w-5 h-5' />
-
-                            <span className='mx-4 font-medium'>Profile</span>
-                        </NavLink>
+                        
                         {/* logout */}
                         <button
                             // onClick={logOutUser}
