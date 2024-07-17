@@ -20,8 +20,6 @@ const Register = () => {
         const user = { name, email, phone, pin, role, status }
         console.log(user);
 
-        e.target.reset()
-
         if (pin === '') {
             return toast.error('Please fulfill your form')
         }
@@ -32,7 +30,7 @@ const Register = () => {
         else if (!/^\d+$/.test(pin)) {
             return toast.error('PIN must contain only numbers.')
         }
-
+        e.target.reset()
 
         axiosCommon.post('/signup', user)
             .then(res => {
@@ -72,7 +70,7 @@ const Register = () => {
                         </div>
 
                         <div className='mt-4'>
-                            <label className="block text-sm text-white dark:text-gray-200">Role</label>
+                            <label className="block text-sm text-black dark:text-gray-200">Role</label>
                             <select name='role' defaultValue='defautl' className="select select-ghost w-full bg-gray-600 border rounded-lg text-white ">
                                 <option disabled value='default' >Select your Role</option>
                                 <option className='text-white'>User</option>

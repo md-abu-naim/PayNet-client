@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 
 const Navber = () => {
-    const token = localStorage.getItem('token')
+    const user = localStorage.getItem('email')
+    console.log(user);
 
     const signOutUser = () => {
         localStorage.removeItem('token');
@@ -26,7 +27,7 @@ const Navber = () => {
                         <ul tabIndex={0} className="mt-3 z-10 p-2 shadow menu menu-sm dropdown-content bg-gray-300 text-black font-bold rounded-box w-52">
                             {/* {user && isStudent && <li className='hover:bg-black hover:text-white rounded-full'><Link to='/dashboard/view-booked-session' >Dashoard</Link></li>}
                             {user && isTutor && <li className='hover:bg-black hover:text-white rounded-full'><Link to='/dashboard/create-session' >Dashoard</Link></li>} */}
-                            { !token ? <li><a>Request Pending</a></li> : <li className='hover:bg-black hover:text-white rounded-full'><Link to='/dashboard/all-users' >Dashoard</Link></li>}
+                            { !user ? <li><a>Request Pending</a></li> : <li className='hover:bg-black hover:text-white rounded-full'><Link to='/dashboard/all-users' >Dashoard</Link></li>}
                             <li className='hover:bg-black hover:text-white rounded-full' ><Link onClick={signOutUser} to='/signIn'>Sign Out</Link></li>
                         </ul>
                     </div> 
