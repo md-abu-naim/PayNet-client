@@ -7,11 +7,14 @@ import AllUsers from "../Dashboard/Admin/AllUsers";
 import Dashboard from "../Layout/Dashboard";
 import SendMoney from "../Dashboard/User/SendMoney";
 import CashOut from "../Dashboard/User/CashOut";
-import History from "../Dashboard/User/History";
 import CashInManagement from "../Dashboard/Agent/CashInManagement";
 import CashOutManagement from "../Dashboard/Agent/CashOutManagement";
 import AllHIstory from "../Dashboard/Admin/AllHIstory";
 import Register from "../Components/Register";
+import Login from "../Components/Login";
+import Overview from "../Dashboard/Shared/Overview";
+import History from "../Dashboard/Shared/History";
+import CashIn from "../Dashboard/User/CashIn";
 
 export const router = createBrowserRouter([
     {
@@ -29,15 +32,18 @@ export const router = createBrowserRouter([
        element: <Register></Register>
     },
     {
-       path: 'signUp',
-       element: <Register></Register>
+       path: 'signIn',
+       element: <Login></Login>
     },
 
     {
         path: '/dashboard',
         element: <Dashboard />,
         children: [
-
+            {
+                path: "overview",
+                element: <Overview />
+            },
             {
                 path: 'history',
                 element: <History />
@@ -47,6 +53,10 @@ export const router = createBrowserRouter([
             {
                 path: 'send-money',
                 element: <SendMoney />
+            },
+            {
+                path: 'cash-in',
+                element: <CashIn />
             },
             {
                 path: 'cash-out',

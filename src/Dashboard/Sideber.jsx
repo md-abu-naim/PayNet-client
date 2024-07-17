@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { GrLogout } from 'react-icons/gr'
 import { AiOutlineBars } from 'react-icons/ai'
-import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { FaBookBookmark } from 'react-icons/fa6'
+// import AdminNavlinks from './Admin/AdminNavlinks';
+// import AgentNavlinks from './Agent/AgentNavlinks';
+import UserNavlinks from './User/UserNavlinks';
 
 const Sideber = () => {
     const [isActive, setActive] = useState(false)
 
-    
+
     // Sidebar Responsive Handler
     const handleToggle = () => {
         setActive(!isActive)
@@ -22,10 +23,10 @@ const Sideber = () => {
                     <div>
                         <div className='block cursor-pointer p-4 font-bold'>
                             <Link to='/' className='text-2xl text-black'>PayNet</Link>
-                            
+
                         </div>
                     </div>
-                    <p className='text-black font-bold '>Balance: 5000 tk</p>
+                    <p className='text-black font-bold '>Balance: 5000 TK</p>
                     <button
                         onClick={handleToggle}
                         className='mobile-menu-button p-4 focus:outline-none focus:bg-[#bba684]'
@@ -54,25 +55,17 @@ const Sideber = () => {
                             {/* {user && isStudent && <StudentNavLinks />}
                             {user && isTutor && <TutorNavLinks />}
                             {user && isAdmin && <AdminNavLinks />} */}
-                            <NavLink
-                to='all-users'
-                className={({ isActive }) =>
-                    `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-[#0d0801]   hover:text-white ${isActive ? 'bg-[#f7ce8c]  text-black' : 'text-black'
-                    }`
-                }
-            >
-                <FaBookBookmark className='w-5 h-5' />
-
-                <span className='mx-4 font-medium'>View booked session</span>
-            </NavLink>
                             
+                            {/* <AdminNavlinks /> */}
+                            {/* <AgentNavlinks /> */}
+                            <UserNavlinks />
                         </div>
                     </div>
 
                     <div>
                         <hr />
 
-                        
+
                         {/* logout */}
                         <button
                             // onClick={logOutUser}
